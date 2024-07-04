@@ -178,7 +178,7 @@ nav ul li a:hover::after{
 }
 /* ----------projects---------- */
 #projects{
-    padding: 150px;
+    padding: 30px;
 }
 .work-list{
     display: grid;
