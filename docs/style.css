@@ -195,7 +195,7 @@ nav ul li a:hover::after{
 .col-md-4-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 100px;
+    grid-gap: 60px;
     margin-top: 50px;
 }
 .col-md-4{
