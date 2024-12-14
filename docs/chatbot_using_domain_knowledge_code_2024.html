@@ -6,11 +6,104 @@
     <title>2024 Object Detection Using a Resource-Limited Device</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/0749385e28.js" crossorigin="anonymous"></script>
+    <link href="themes/prism.css" rel="stylesheet" />
 </head>
-<body>
-    <div align="center">
-        <script src="https://gist.github.com/Robotyoyo/8979681c9ef058526d37921b7519b976.js" height="1900px"></script>
-    </div>  
+<body> 
+    <script src="prism.js"></script>
     <a href="index.html" class="btn">Go Back</a>  
+
+    <div align="center">
+        <iframe width="1400" height="800" src="https://www.youtube.com/embed/B2sLZ2WX-Is?si=3kdBCDulWDwWpfos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="container">
+        <h1 class="sub-title">Code:</h1>
+
+        <pre><code class="language-python">
+            import PyPDF2
+            from langchain_community.llms import OpenAI
+            from langchain.text_splitter import RecursiveCharacterTextSplitter
+            from langchain_community.vectorstores import FAISS
+            from langchain_community.embeddings.openai import OpenAIEmbeddings
+            from langchain.chains import RetrievalQA
+
+            class PDFChatbot:
+                def __init__(self, pdf_path, openai_api_key):
+                    self.pdf_path = pdf_path
+                    self.openai_api_key = openai_api_key
+                    self.text_content = []
+                    self.vectorstore = None
+                    self._load_pdf()
+                    self._prepare_vectorstore()
+
+                def _load_pdf(self):
+                    # Load the text from the PDF file.
+                    with open(self.pdf_path, 'rb') as file:
+                        reader = PyPDF2.PdfReader(file)
+                        for i, page in enumerate(reader.pages):
+                            text = page.extract_text()
+                            if text: # Avoid adding empty text
+                                self.text_content.append({"text": text, "page_number": i + 1})
+                    print("PDF loaded successfully!")
+
+                def _prepare_vectorstore(self):
+                    # Prepare the vectorstore for retrieval-based QA.
+                    chunks = []
+                    metadatas = []
+                    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+
+                    for content in self.text_content:
+                        chunked_texts = text_splitter.split_text(content["text"])
+                        chunks.extend(chunked_texts)
+                        metadatas.extend([{"page_number": content["page_number"]}] * len(chunked_texts))
+
+                    # Create embeddings and vectorstore
+                    embeddings = OpenAIEmbeddings(openai_api_key=self.openai_api_key)
+                    self.vectorstore = FAISS.from_texts(chunks, embeddings, metadatas=metadatas)
+                    print("Vectorstore created successfully")
+
+                def ask_question(self, question):
+                    # Ask a question and get an answer with references.
+                    retriever = self.vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+                    docs = retriever.get_relevant_documents(question)
+
+                    # Extract references and combine responses
+                    references = []
+                    for doc in docs:
+                        page_number = doc.metadata.get("page_number", "Unknown")
+                        if page_number != "Unknown":
+                            references.append(f"Page {page_number}: {doc.page_content.strip()[:200]}...")
+                        else: 
+                            print("Warning: Cannot find metadata for page number retrieval")
+
+                    # Combine references and generate answer
+                    qa_chain = RetrievalQA.from_chain_type(
+                        llm=OpenAI(temperature=0, openai_api_key=self.openai_api_key),
+                        retriever=retriever
+                    )
+                    answer = qa_chain.run(question)
+                    return answer, references
+
+            # Usage
+            if __name__ == "__main__":
+                # Provide the path to your PDF file and your OpenAI API key
+                pdf_path = input("Enter PDF file name: ")
+                openai_api_key = "" #enter your openai key
+
+                chatbot = PDFChatbot(pdf_path, openai_api_key)
+
+                print("Chatbot is ready! Ask questions about the PDF.")
+                while True:
+                    user_question = input("You: ")
+                    if user_question.lower() in ["exit", "quit"]:
+                        print("Goodbye!")
+                        break
+                    response, references = chatbot.ask_question(user_question)
+                    print(f"Bot: {response}")
+                    print("References:")
+                    for ref in references:
+                        print(f"- {ref}")
+        </code></pre>
+    </div>
 </body>
 </html>
