@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Lo's Portfolio Website</title>
-    <script src="https://kit.fontawesome.com/0749385e28.js" crossorigin="anonymous"></script>
+    <title>Ethan Lo's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/0749385e28.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
@@ -19,7 +16,7 @@
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -39,14 +36,11 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <div class="sub-title-content">
-                    <p>Born in San Antonio, Texas, I moved to and mainly have lived in Marietta, Georgia. 
-                    I studied at Walton High School, surrounded by competitiveness and discipline. 
-                    As a high-achieving academic student, I also have many interests outside of school including computer 
-                    science, music, and tennis. With my father a computer science professor and my mother a piano teacher, 
-                    I have experienced the best of both worlds. 
-                    </p>
-                </div>
+                <p>Hi! My name is Ethan Lo, a sophomore from Walton High School in Marietta, Georgia. I am currently pursuing
+                the Advanced Math and Science (AMS) STEM pathway at my school. In my free time you will find me either
+                playing with my two dogs, hanging out with my friends, or sleeping to recover from my sleep deprivation.
+                In addition to music, tennis, and coding, I love learning new skills and meeting new people. 
+                </p>
 
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('Computer Science')">Computer Science</p>
@@ -56,15 +50,15 @@
                 <div class="tab-contents active-tab" id="Computer Science">
                     <ul>
                         <li><span>Computer Science</span><br>‣ I have always been interested in coding from an early age. I was taught
-                        Python with tutors and professors while practicing the language by myseslf. Additionally, my father is a 
-                        computer science professor at KSU. I have tried to explore different fields in coding, such as robotics, website 
+                        basic Python with tutors and professors while practicing the language by myseslf. Additionally, my father is a 
+                        computer science professor at KSU. I tried to explore different fields in coding, such as robotics, website 
                         development, and project programming. In my freshman year of high school,
                         I took AP Computer Science Principles online; subsequently, I took AP Computer Science A in person in my 
                         sophomore year, learning Java for the first time. In my eyes, coding gives me pleasure as it forces me to
-                        think critcally about existing and potential problems, and it is satisfying to see my code successful execute.</li>
+                        think critcally about existing and potential problems, and it is satisfying to see my code successful compile.</li>
                         <li><span>Awards</span><br>‣ Former member of the GMAC Robotics Team, which won 1st in the Regional FLL
                         LEGO Competition and 3rd at the Georgia state level<br>
-                        ‣ 2nd in the 2021 Cobb Regional Technology Competition (CRTC) in the robotics category with my project, Self-Balancing Robot
+                        ‣ 2nd in the 2021 Cobb Regional Technology Competition (CRTC) in the robotics category with my project, Self-Standing Robot
                         with a Gyro Sensor<br>
                         ‣ Certified in cybersecurity by the GenCyber Workshop at GSU with a full scholarship in 2022<br>
                         ‣ 1st in the 2022 CRTC in the robotics category with my project, Automated Garbage Collection Robot<br>
@@ -74,8 +68,7 @@
                         ‣ Selected as a spotlight student for Georgia Virtual School in 2023<br>
                         ‣ Member of the Walton High School's 2023-2024 Computer Science Honor Society (CSHS)<br>
                         ‣ 2nd in the 2024 NCTC in the project programming category with my project, Object Detection Using a Resource-Limited
-                        Device with Machine Learning<br>
-                        ‣ Computer Science minor in the 2024 Governor's Honor Program</li>
+                        Device with Machine Learning</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="Music">
@@ -97,7 +90,7 @@
                         ‣ 1st in the 2022 Charleston International Chamber Music Competition with his chamber group, the Spitzenreiter Trio<br>
                         ‣ 1st in the 2022 Franklin Pond Chamber Music Competition MS division with the Spitzenreiter Trio<br>
                         ‣ 2nd in the 2022 American Virtuoso International Chamber Music Competition with the Spitzenreiter Trio (performed at Carnegie Hall)<br>
-                        ‣ 1st in the 2023 American Protege International Concerto Competition (performed at Carnegie Hall)</li>
+                        ‣ 1st in the 2023 American Protege International Concerto Competition (perofrmed at Carnegie Hall)</li>
                         <li><span>Orchestras</span><br>‣ Principal cellist in the 2022 All-State Middle School Orchestra<br>
                         ‣ Assistant principal cellist in the 2023 All-State Full Orchestra in the G9-10 divison<br>
                         ‣ Asssitant principal cellist in the 2022-2023 Walton High School Chamber Orchestra<br>
@@ -106,8 +99,7 @@
                         ‣ Principal cellist in the 2023-2024 ASYO Piedmont String Chamber Orchestra</li>
                         <li><span>Summer Programs</span><br>‣ 2019 Atlanta Festival Academy held by the William Pu Music Academy<br>
                         ‣ 2022 Credo Music Festival at the Oberlin Conservatory of Music<br>
-                        ‣ 2023 Heifetz International Music Institute Summer Program<br>
-                        ‣ 2024 Governor's Honor Program Music Major</li>
+                        ‣ 2023 Heifetz International Music Institute Summer Program</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="Tennis">
@@ -129,7 +121,7 @@
     </div>
 </div> 
 <!-- -------------services-------------- -->
-<div id="services">
+<!-- <div id="services">
     <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
@@ -142,105 +134,58 @@
             </div>
             <div>
                 <i class="fa-solid fa-crop"></i>
-                <h2>UI/UX Design</h2>
+                <h2>Game Development</h2>
                 <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit. Sed nulla nibh,
                 tincidunt sit amet sapien quis.</p>
                 <a href="#">Learn more</a>
             </div>
             <div>
                 <i class="fa-brands fa-app-store"></i>
-                <h2>Game Development</h2>
+                <h2>App Design</h2>
                 <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit. Sed nulla nibh,
                 tincidunt sit amet sapien quis.</p>
                 <a href="#">Learn more</a>
             </div>
-        </div> <br> <br> <br> <br> <br>
-<!-- projects -->        
-        <div id="projects">
-            <div id="container">
-                <h1 class="sub-title">My Projects</h1>
-                <div class="col-md-4-list">
-                    <div class="col-md-4">
-                        <img src="images/object_detection_1.png" class="img-fluid" height="650">
-                        <div class="layer">
-                            <h3>Object Detection Using a Resource-Limited Device with Machine Learning</h3>
-                            <p>Project Programming<br>
-                            Run an object detection model on a resource-limited device to detect objects in both images and video streams.</p>
-                            <a href="https://docs.google.com/presentation/d/1SGqbAlrZeT9-XO1HmGafmk8MueJOEPtE083f_khziRc/edit?usp=sharing" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="images/garbage_robot_1.jpg" class="img-fluid" height="650">
-                        <div class="layer">
-                            <h3>Automated Garbage Collection Robot</h3>
-                            <p>Robotics<br>Identify and dispose of garbage solely self-automated using a vacuum mechanism.</p>
-                            <a href="https://sites.google.com/view/crtc2022project/home?authuser=0" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="images/self_balancing.jpg" class="img-fluid" height="650">
-                        <div class="layer">
-                            <h3>Self-Balancing Robot with a Gyro Sensor</h3>
-                            <p>Robotics<br>Balance itself upright on two wheels, constantly adjusting itself with a gyro sensor.</p>
-                            <!-- <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="btn">See more</a>
-            </div>    
         </div>
     </div>
-</div>
-<!-- --------------projects-------------- -->
-<!-- <div id="projects">
+</div> -->
+<!-- --------------portfolio-------------- -->
+<div id="portfolio">
     <div id="container">
         <h1 class="sub-title">My Projects</h1>
-<<<<<<< Updated upstream
-        <div class="col-md-4-list">
-            <div class="col-md-4">
-                <img src="images/object_detection_1.png" class="img-fluid" height="700">
-=======
         <div class="work-list">
             <div class="work">
-                <img src="images/object_detection_1.png" height="650">
->>>>>>> Stashed changes
+                <img src="images/object_detection_1.png" height="700">
                 <div class="layer">
                     <h3>Object Detection Using a Resource-Limited Device with Machine Learning</h3>
                     <p>Project Programming<br>
                     Run an object detection model on a resource-limited device to detect objects in both images and video streams.</p>
-                    <a href="images/NCTC Project Programming Presentation 2024.pptx"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href=object_detection_ppt_2024.html><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
-<<<<<<< Updated upstream
-            <div class="col-md-4">
-                <img src="images/garbage_robot_1.jpg" class="img-fluid" height="700">
-=======
             <div class="work">
-                <img src="images/garbage_robot_1.jpg" height="650">
->>>>>>> Stashed changes
+                <img src="images/garbage_robot_1.jpg" height="700">
                 <div class="layer">
                     <h3>Automated Garbage Collection Robot</h3>
                     <p>Robotics<br>Identify and dispose of garbage solely self-automated using a vacuum mechanism.</p>
                     <a href="https://youtu.be/U59MCz4a-FM?si=8KjLIYfOMlQat-7k"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
-<<<<<<< Updated upstream
-            <div class="col-md-4">
-                <img src="images/self_balancing.jpg" class="img-fluid"height="700">
-=======
             <div class="work">
-                <img src="images/self_balancing.jpg" height="650">
->>>>>>> Stashed changes
+                <img src="images/work-3.png" height="700">
                 <div class="layer">
-                    <h3>Self-Balancing Robot with a Gyro Sensor</h3>
+                    <!-- <h3>Self-Standing Robot with a Gyro Sensor</h3>
                     <p>Robotics<br>Balance itself upright on two wheels, constantly adjusting itself with a gyro sensor.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+                    <h3>Chatbot Using Domain Knowledge</h3>
+                    <p>Software Development<br>Provide information and converse with the user about an uploaded PDF file input for academic assistance</p>
+                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn">See more</a>
+        <a href="projects.html" class="btn">See more</a>
     </div>    
-</div> -->
+</div>
 <!-- --------------contact--------------- -->
 <div id="contact">
     <div class="container">

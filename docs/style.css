@@ -71,8 +71,8 @@ nav ul li a:hover::after{
 }
 /* --------------about--------------- */
 #about{
-    padding: 30px;
-    color: #ffffff;
+    padding: 80px 0;
+    color: #ababab;
 }
 .row{
     display: flex;
@@ -97,18 +97,13 @@ nav ul li a:hover::after{
     color: #fff;
 }
 
-.sub-title-content{
-    font-size: 22px;
-    color: #fff;
-}
-
 .tab-titles{
     display: flex;
     margin: 20px 0 40px;
 }
 .tab-links{
     margin-right: 50px;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -133,26 +128,19 @@ nav ul li a:hover::after{
     margin: 10px 0;
 }
 .tab-contents ul li span{
-    color: #ff004f;
-    font-size: 24px;
-    font-weight: 600;
+    color: #b54769;
+    font-size: 14px;
 }
 .tab-contents{
     display: none;
-    font-size: 22px;
 }
 .tab-contents.active-tab{
     display: block;
 }
 
-.tab-contents::after{
-    transition-timing-function: ease;
-    transition: 0.5s;
-}
-
 /* ------------------services------------------ */
 #services{
-    padding: 30px;
+    padding: 30px 0;
 }
 .services-list{
     display: grid;
@@ -188,22 +176,22 @@ nav ul li a:hover::after{
     background: #ff004f;
     transform: translateY(-10px);
 }
-/* ----------projects---------- */
-#projects{
-    /* padding: 0; */
+/* ----------portfolio---------- */
+#portfolio{
+    padding: 150px;
 }
-.col-md-4-list{
+.work-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 50px;
+    grid-gap: 40px;
     margin-top: 50px;
 }
-.col-md-4{
+.work{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
-.col-md-4 img{
+.work img{
     width: 100%;
     border-radius: 10px;
     display: block;
@@ -243,10 +231,10 @@ nav ul li a:hover::after{
     border-radius: 50%;
     text-align: center;
 }
-.col-md-4:hover img{
+.work:hover img{
     transform: scale(1.1);
 }
-.col-md-4:hover .layer{
+.work:hover .layer{
     height: 100%;
 }
 .btn{
@@ -265,9 +253,6 @@ nav ul li a:hover::after{
 }
 
 /* ---------------contact------------------ */
-#contact{
-    padding: 30px;
-}
 .contact-left{
     flex-basis: 35%;
 }
